@@ -1,0 +1,2 @@
+*.png
+!public_html/img/brand/*.png
