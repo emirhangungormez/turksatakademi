@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Staj Paneli | Türksat Akademi</title>
-  <meta name="description" content="Türksat Akademi konsept demosu için genç yetenek profili ve staj başvuru paneli.">
+  <meta name="description" content="Türksat Akademi konsept demosu için prototip genç yetenek ve staj başvuru alanı.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#050505">
   <link rel="icon" type="image/png" href="img/brand/turksat-favicon.png">
-  <link rel="stylesheet" href="style.css?v=internship-table-1">
+  <link rel="stylesheet" href="style.css?v=mobile-6">
 </head>
 <body>
   <header class="topbar">
@@ -31,37 +31,27 @@
   </header>
 
   <main class="page-shell">
-    <section class="page-hero">
-      <p class="eyebrow">Genç Yetenek / Demo başvuru</p>
-      <h1>Profil oluştur, yetkinliklerini ekle, staj başvurunu görüntüle.</h1>
-      <p>Bu panel backend kullanmaz. Form bilgileri yalnızca ekranda demo olarak aktif başvuru kartına yansıtılır.</p>
-    </section>
+    <section class="internship-apply" aria-labelledby="internshipApplyTitle">
+      <div class="internship-apply-head">
+        <p class="eyebrow">Genç Yetenek Alanı</p>
+        <h1 id="internshipApplyTitle">Staj başvurusu yap</h1>
+        <p>Bu alan, Türksat Akademi içinde genç yeteneklerin başvuru deneyimini göstermek için hazırlanmış prototip formdur. Gönderilen bilgiler yalnızca aşağıdaki demo tabloda görünür.</p>
+      </div>
 
-    <section class="internship-workspace">
       <form class="internship-form" id="internshipForm">
-        <label>Ad Soyad<input name="name" value="Elif Arslan"></label>
-        <label>Okul / Bölüm<input name="school" value="ODTÜ · Bilgisayar Mühendisliği"></label>
-        <label>Sınıf<input name="grade" value="3. sınıf"></label>
+        <label>Ad Soyad<input name="name" value="Elif Arslan" required></label>
+        <label>E-posta<input type="email" name="email" value="elif.arslan@example.com" required></label>
+        <label>Telefon<input name="phone" value="+90 555 000 00 00"></label>
+        <label>Okul<input name="school" value="ODTÜ" required></label>
+        <label>Bölüm<input name="department" value="Bilgisayar Mühendisliği" required></label>
+        <label>Sınıf<select name="grade"><option>Hazırlık</option><option>1. sınıf</option><option>2. sınıf</option><option selected>3. sınıf</option><option>4. sınıf</option><option>Mezun</option></select></label>
+        <label>Staj alanı<select name="track"><option>Network ve altyapı</option><option>Siber güvenlik</option><option>Uydu haberleşmesi</option><option>Yazılım geliştirme</option><option>Veri merkezi ve bulut</option><option>Proje yönetimi</option></select></label>
         <label>Yetkinlikler<input name="skills" value="Python, Linux, Ağ temelleri, Siber güvenlik"></label>
-        <label>İlgi alanı<select name="track"><option>Network ve altyapı</option><option>Siber güvenlik</option><option>Uydu haberleşmesi</option><option>Yazılım geliştirme</option></select></label>
-        <button class="dashboard-btn" type="submit">Başvuruyu demo olarak oluştur</button>
+        <label>Portfolyo / LinkedIn<input name="portfolio" value="linkedin.com/in/elifarslan"></label>
+        <label class="form-wide">Kısa motivasyon<textarea name="motivation" rows="4">Uydu, ağ ve siber güvenlik alanlarında kurumsal ölçekte çalışma deneyimi kazanmak istiyorum.</textarea></label>
+        <div class="form-wide form-note" id="internshipFormNote" aria-live="polite">Form gönderildiğinde başvuru aşağıdaki aktif istekler tablosuna demo olarak eklenir.</div>
+        <button class="dashboard-btn form-wide" type="submit">Başvuruyu gönder</button>
       </form>
-
-      <aside class="application-card" id="applicationCard">
-        <span class="application-label">Aktif stajyer başvurusu</span>
-        <h2>Elif Arslan</h2>
-        <p>ODTÜ · Bilgisayar Mühendisliği · 3. sınıf</p>
-        <div class="skill-strip">
-          <span>Python</span>
-          <span>Linux</span>
-          <span>Ağ temelleri</span>
-          <span>Siber güvenlik</span>
-        </div>
-        <div class="application-status">
-          <span></span>
-          <p>Network ve altyapı alanı için başvuru demo ortamında aktif.</p>
-        </div>
-      </aside>
     </section>
 
     <section class="internship-requests" aria-labelledby="internshipRequestsTitle">
@@ -78,6 +68,7 @@
           <thead>
             <tr>
               <th>Aday</th>
+              <th>İletişim</th>
               <th>Okul / Bölüm</th>
               <th>Alan</th>
               <th>Yetkinlikler</th>
@@ -87,6 +78,7 @@
           <tbody id="internshipRequestsBody">
             <tr>
               <td><strong>Elif Arslan</strong><span>3. sınıf</span></td>
+              <td>elif.arslan@example.com</td>
               <td>ODTÜ · Bilgisayar Mühendisliği</td>
               <td>Network ve altyapı</td>
               <td>Python, Linux, Ağ temelleri</td>
@@ -94,6 +86,7 @@
             </tr>
             <tr>
               <td><strong>Mert Demir</strong><span>4. sınıf</span></td>
+              <td>mert.demir@example.com</td>
               <td>İTÜ · Elektronik ve Haberleşme</td>
               <td>Uydu haberleşmesi</td>
               <td>RF temelleri, MATLAB, Telekom</td>
@@ -101,6 +94,7 @@
             </tr>
             <tr>
               <td><strong>Zeynep Kaya</strong><span>Mezun</span></td>
+              <td>zeynep.kaya@example.com</td>
               <td>Hacettepe · Bilgisayar Mühendisliği</td>
               <td>Siber güvenlik</td>
               <td>SIEM, Linux, Olay müdahalesi</td>
@@ -111,7 +105,6 @@
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -121,25 +114,35 @@
       </div>
       <nav class="footer-col" aria-label="Platform">
         <strong>Platform</strong>
+        <a href="index.html">Ana Sayfa</a>
         <a href="docs.html">Dokümanlar</a>
         <a href="egitim.html">Eğitimler</a>
-        <a href="staj.html">Staj Paneli</a>
         <a href="uydu.html">Uydu Merkezi</a>
+        <a href="staj.html">Staj Paneli</a>
+        <a href="yayinlar.html">Yayınlar</a>
+      </nav>
+      <nav class="footer-col" aria-label="Eğitimler">
+        <strong>Eğitimler</strong>
+        <a href="network101.html">Network 101</a>
+        <a href="siber-guvenlik101.html">Siber Güvenlik 101</a>
+        <a href="uydu-haberlesmesi101.html">Uydu Haberleşmesi 101</a>
       </nav>
       <nav class="footer-col" aria-label="İçerik">
         <strong>İçerik</strong>
-        <a href="yayinlar.html">Yayınlar</a>
         <a href="docs.html#blog">Blog yazıları</a>
         <a href="docs.html#tezler">Tez özetleri</a>
+        <a href="docs.html#teknik-notlar">Teknik notlar</a>
+        <a href="yayinlar.html">Yayınlar</a>
       </nav>
-      <nav class="footer-col" aria-label="Bilgi">
-        <strong>Bilgi</strong>
+      <nav class="footer-col" aria-label="Demo">
+        <strong>Demo</strong>
         <a href="index.html">Konsept bildirimi</a>
-        <a href="docs.html">Noindex demo</a>
+        <a href="robots.txt">Noindex ayarı</a>
+        <a href="llms.txt">LLMS notu</a>
       </nav>
     </div>
     <div class="footer-bottom">© 2026 Türksat Akademi konsept demosu.</div>
   </footer>
-  <script src="script.js?v=internship-table-1"></script>
+  <script src="script.js?v=internship-wide-1"></script>
 </body>
 </html>

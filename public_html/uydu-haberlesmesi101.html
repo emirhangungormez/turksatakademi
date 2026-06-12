@@ -4,29 +4,102 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Uydu Haberleşmesi 101 | Türksat Akademi</title>
+  <meta name="description" content="Türksat Akademi konsept demosu için uydu haberleşmesi, yörünge, kapsama ve yer istasyonu eğitim serisi.">
   <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#050505">
   <link rel="icon" type="image/png" href="img/brand/turksat-favicon.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=mobile-6">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="index.html"><span class="brand-mark"><img src="img/brand/turksat-logo.png" alt="Türksat logosu"></span><span class="brand-copy"><strong>Akademi</strong><small>Geliştirici Merkezi</small></span></a>
-    <nav class="main-nav" aria-label="Ana gezinme"><a href="index.html">Ana Sayfa</a><a href="docs.html">Dokümanlar</a><a class="is-active" href="egitim.html">Eğitimler</a><a href="staj.html">Staj Paneli</a><a href="uydu.html">Uydu Merkezi</a><a href="yayinlar.html">Yayınlar</a></nav>
-    <div class="nav-actions"><a class="search-pill" href="docs.html">Dokümanlarda ara <span>⌕</span></a><a class="dashboard-btn" href="egitim.html">Eğitimlere dön</a></div>
+    <a class="brand" href="index.html" aria-label="Türksat Akademi ana sayfa">
+      <span class="brand-mark"><img src="img/brand/turksat-logo.png" alt="Türksat logosu"></span>
+      <span class="brand-copy"><strong>Akademi</strong><small>Geliştirici Merkezi</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Ana gezinme">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="docs.html">Dokümanlar</a>
+      <a class="is-active" href="egitim.html">Eğitimler</a>
+      <a href="staj.html">Staj Paneli</a>
+      <a href="uydu.html">Uydu Merkezi</a>
+      <a href="yayinlar.html">Yayınlar</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="search-pill" href="docs.html">Dokümanlarda ara <span>⌕</span></a>
+      <a class="dashboard-btn" href="egitim.html">Eğitimlere dön</a>
+    </div>
   </header>
-  <main class="course-player page-shell">
-    <section class="video-stage"><div class="video-placeholder satellite"><span>▶</span><strong>Uydu Haberleşmesi 101 · Ders 1</strong><p>Yörünge, kapsama ve temel uydu terminolojisi</p></div></section>
-    <aside class="lesson-panel"><h1>Uydu Haberleşmesi 101</h1><p>7 videoluk orta seviye seri. Uydu merkezi ve sözlük dokümanlarıyla desteklenir.</p><ol><li class="is-active">Uydu haberleşmesine giriş</li><li>GEO yörünge mantığı</li><li>Kapsama alanı okuma</li><li>Yer istasyonu bileşenleri</li><li>Yayıncılık terimleri</li></ol><a class="dashboard-btn" href="uydu.html">Uydu merkezini aç</a></aside>
+
+  <main class="page-shell course-detail course-video-focus">
+    <section class="course-player">
+      <div class="video-stage">
+        <div class="video-placeholder satellite course-video" id="courseVideo">
+          <div class="course-video-top">
+            <span class="course-badge">Orta seviye</span>
+            <span>7 ders · 54 dk</span>
+          </div>
+          <button class="play-circle" type="button" aria-label="Dersi oynat">▶</button>
+          <strong id="courseVideoTitle"><span>Uydu Haberleşmesi 101</span><span>Ders 1</span></strong>
+          <p id="courseVideoText">Yörünge, kapsama ve temel uydu terminolojisi</p>
+          <div class="video-timeline" aria-hidden="true"><i></i></div>
+        </div>
+      </div>
+
+      <div class="course-progress-panel" aria-label="Ders ilerleme listesi">
+        <div class="course-progress-head">
+          <span>İlerleme</span>
+          <strong id="courseProgressText">1 / 7 ders</strong>
+        </div>
+        <ol class="lesson-list course-progress-list">
+          <li class="is-active" data-title="Uydu Haberleşmesi 101 · Ders 1" data-text="Yörünge, kapsama ve temel uydu terminolojisi"><button type="button"><span>01</span>Uydu haberleşmesine giriş</button></li>
+          <li data-title="Uydu Haberleşmesi 101 · Ders 2" data-text="GEO uyduların 31°, 42° ve 50° Doğu slotlarında nasıl konumlandığı"><button type="button"><span>02</span>GEO yörünge mantığı</button></li>
+          <li data-title="Uydu Haberleşmesi 101 · Ders 3" data-text="Kapsama haritaları, beam kavramı ve hizmet alanı yorumlama"><button type="button"><span>03</span>Kapsama alanı okuma</button></li>
+          <li data-title="Uydu Haberleşmesi 101 · Ders 4" data-text="Anten, uplink, downlink, telemetri ve yer istasyonu bileşenleri"><button type="button"><span>04</span>Yer istasyonu bileşenleri</button></li>
+          <li data-title="Uydu Haberleşmesi 101 · Ders 5" data-text="Transponder, frekans, yayın paketi ve operasyonel yayıncılık terimleri"><button type="button"><span>05</span>Yayıncılık terimleri</button></li>
+          <li data-title="Uydu Haberleşmesi 101 · Ders 6" data-text="Türksat filosu üzerinden stratejik kapasite ve servis sürekliliği"><button type="button"><span>06</span>Filo ve kapasite</button></li>
+          <li data-title="Uydu Haberleşmesi 101 · Ders 7" data-text="Kısa değerlendirme, sözlük ve uydu merkezi bağlantılı tekrar"><button type="button"><span>07</span>Değerlendirme</button></li>
+        </ol>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <div class="footer-grid">
-      <div class="footer-brand"><span class="footer-brand-mark"><img src="img/brand/turksat-logo.png" alt="Türksat logosu"></span><strong>Türksat Akademi</strong><p>Konsept demo. Resmi Türksat ürünü değildir. Yönetim sunumu ve bilgi mimarisi değerlendirmesi amacıyla hazırlanmıştır.</p></div>
-      <nav class="footer-col" aria-label="Platform"><strong>Platform</strong><a href="docs.html">Dokümanlar</a><a href="egitim.html">Eğitimler</a><a href="staj.html">Staj Paneli</a><a href="uydu.html">Uydu Merkezi</a></nav>
-      <nav class="footer-col" aria-label="İçerik"><strong>İçerik</strong><a href="yayinlar.html">Yayınlar</a><a href="docs.html#blog">Blog yazıları</a><a href="docs.html#tezler">Tez özetleri</a></nav>
-      <nav class="footer-col" aria-label="Bilgi"><strong>Bilgi</strong><a href="index.html">Konsept bildirimi</a><a href="docs.html">Noindex demo</a></nav>
+      <div class="footer-brand">
+        <span class="footer-brand-mark"><img src="img/brand/turksat-logo.png" alt="Türksat logosu"></span>
+        <strong>Türksat Akademi</strong>
+        <p>Konsept demo. Resmi Türksat ürünü değildir. Yönetim sunumu ve bilgi mimarisi değerlendirmesi amacıyla hazırlanmıştır.</p>
+      </div>
+      <nav class="footer-col" aria-label="Platform">
+        <strong>Platform</strong>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="docs.html">Dokümanlar</a>
+        <a href="egitim.html">Eğitimler</a>
+        <a href="uydu.html">Uydu Merkezi</a>
+        <a href="staj.html">Staj Paneli</a>
+        <a href="yayinlar.html">Yayınlar</a>
+      </nav>
+      <nav class="footer-col" aria-label="Eğitimler">
+        <strong>Eğitimler</strong>
+        <a href="network101.html">Network 101</a>
+        <a href="siber-guvenlik101.html">Siber Güvenlik 101</a>
+        <a href="uydu-haberlesmesi101.html">Uydu Haberleşmesi 101</a>
+      </nav>
+      <nav class="footer-col" aria-label="İçerik">
+        <strong>İçerik</strong>
+        <a href="docs.html#blog">Blog yazıları</a>
+        <a href="docs.html#tezler">Tez özetleri</a>
+        <a href="docs.html#teknik-notlar">Teknik notlar</a>
+        <a href="yayinlar.html">Yayınlar</a>
+      </nav>
+      <nav class="footer-col" aria-label="Demo">
+        <strong>Demo</strong>
+        <a href="index.html">Konsept bildirimi</a>
+        <a href="robots.txt">Noindex ayarı</a>
+        <a href="llms.txt">LLMS notu</a>
+      </nav>
     </div>
     <div class="footer-bottom">© 2026 Türksat Akademi konsept demosu.</div>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js?v=course-video-focus-1"></script>
 </body>
 </html>

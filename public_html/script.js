@@ -123,8 +123,8 @@ document.addEventListener("keydown", (event) => {
 renderSearchResults();
 
 const internshipForm = document.getElementById("internshipForm");
-const applicationCard = document.getElementById("applicationCard");
 const internshipRequestsBody = document.getElementById("internshipRequestsBody");
+const internshipFormNote = document.getElementById("internshipFormNote");
 
 function escapeHtml(value) {
   return String(value)
@@ -135,12 +135,14 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-if (internshipForm && applicationCard) {
+if (internshipForm) {
   internshipForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const data = new FormData(internshipForm);
     const name = escapeHtml(data.get("name") || "Demo aday");
-    const school = escapeHtml(data.get("school") || "Üniversite bilgisi");
+    const email = escapeHtml(data.get("email") || "E-posta bilgisi");
+    const school = escapeHtml(data.get("school") || "Üniversite");
+    const department = escapeHtml(data.get("department") || "Bölüm bilgisi");
     const grade = escapeHtml(data.get("grade") || "Sınıf bilgisi");
     const track = escapeHtml(data.get("track") || "Genel başvuru");
     const skills = String(data.get("skills") || "")
@@ -149,32 +151,48 @@ if (internshipForm && applicationCard) {
       .filter(Boolean);
     const escapedSkills = skills.map(escapeHtml);
 
-    applicationCard.innerHTML = `
-      <span class="application-label">Aktif stajyer başvurusu</span>
-      <h2>${name}</h2>
-      <p>${school} · ${grade}</p>
-      <div class="skill-strip">
-        ${escapedSkills.map((skill) => `<span>${skill}</span>`).join("")}
-      </div>
-      <div class="application-status">
-        <span></span>
-        <p>${track} alanı için başvuru demo ortamında aktif.</p>
-      </div>
-    `;
-
     if (internshipRequestsBody) {
       const row = document.createElement("tr");
       row.innerHTML = `
         <td><strong>${name}</strong><span>${grade}</span></td>
-        <td>${school}</td>
+        <td>${email}</td>
+        <td>${school} · ${department}</td>
         <td>${track}</td>
         <td>${escapedSkills.join(", ") || "Yetkinlik bilgisi bekleniyor"}</td>
         <td><span class="request-status is-active">Aktif</span></td>
       `;
       internshipRequestsBody.prepend(row);
     }
+
+    if (internshipFormNote) {
+      internshipFormNote.classList.add("is-success");
+      internshipFormNote.textContent = `${name} için staj başvurusu demo tabloya eklendi.`;
+    }
   });
 }
+
+const lessonItems = document.querySelectorAll(".lesson-list li");
+const courseVideoTitle = document.getElementById("courseVideoTitle");
+const courseVideoText = document.getElementById("courseVideoText");
+const courseProgressText = document.getElementById("courseProgressText");
+
+function renderCourseTitle(title) {
+  if (!courseVideoTitle) return;
+  const parts = String(title).split("·").map((part) => part.trim()).filter(Boolean);
+  courseVideoTitle.innerHTML = parts.length > 1
+    ? parts.map((part) => `<span>${escapeHtml(part)}</span>`).join("")
+    : `<span>${escapeHtml(title)}</span>`;
+}
+
+lessonItems.forEach((item, index) => {
+  item.querySelector("button")?.addEventListener("click", () => {
+    lessonItems.forEach((lesson) => lesson.classList.remove("is-active"));
+    item.classList.add("is-active");
+    if (item.dataset.title) renderCourseTitle(item.dataset.title);
+    if (courseVideoText && item.dataset.text) courseVideoText.textContent = item.dataset.text;
+    if (courseProgressText) courseProgressText.textContent = `${index + 1} / ${lessonItems.length} ders`;
+  });
+});
 
 const satelliteInfo = document.getElementById("satelliteInfo");
 const satelliteDots = document.querySelectorAll(".satellite-dot");

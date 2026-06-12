@@ -405,6 +405,33 @@ body {
   font-style: normal;
 }
 
+.internship-apply {
+  width: min(var(--max), 100%);
+  margin: 0 auto;
+  padding-bottom: 8px;
+}
+
+.internship-apply-head {
+  max-width: 820px;
+  margin: 0 auto;
+  padding-bottom: 28px;
+  text-align: center;
+}
+
+.internship-apply-head h1 {
+  margin: 0 0 16px;
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.internship-apply-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
 .internship-workspace {
   display: grid;
   grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1.15fr);
@@ -413,8 +440,11 @@ body {
 
 .internship-form {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
-  padding: 24px;
+  width: min(100%, 1040px);
+  margin: 0 auto;
+  padding: 28px;
 }
 
 .internship-form label {
@@ -426,6 +456,7 @@ body {
 
 .internship-form input,
 .internship-form select,
+.internship-form textarea,
 .search-input {
   width: 100%;
   border: 1px solid var(--line-soft);
@@ -434,6 +465,35 @@ body {
   color: var(--text);
   padding: 13px 14px;
   font: inherit;
+}
+
+.internship-form textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.form-wide {
+  grid-column: 1 / -1;
+}
+
+button.form-wide {
+  width: 100%;
+}
+
+.form-note {
+  padding: 13px 14px;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.form-note.is-success {
+  border-color: rgba(48, 209, 88, 0.34);
+  background: rgba(48, 209, 88, 0.10);
+  color: #9dffb3;
 }
 
 .application-card {
@@ -486,7 +546,7 @@ body {
 
 .requests-table {
   width: 100%;
-  min-width: 860px;
+  min-width: 980px;
   border-collapse: collapse;
 }
 
@@ -559,11 +619,17 @@ body {
   gap: 24px;
 }
 
+.course-detail {
+  padding-top: 44px;
+}
+
 .video-stage {
   min-height: 560px;
 }
 
 .video-placeholder {
+  position: relative;
+  overflow: hidden;
   min-height: 560px;
   display: grid;
   align-content: center;
@@ -573,6 +639,18 @@ body {
   background:
     radial-gradient(circle at 30% 20%, rgba(47, 155, 255, 0.28), transparent 34%),
     linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(18, 18, 18, 0.88));
+}
+
+.video-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.38;
+  pointer-events: none;
 }
 
 .video-placeholder.danger {
@@ -588,6 +666,7 @@ body {
 }
 
 .video-placeholder span {
+  position: relative;
   width: 70px;
   height: 70px;
   display: grid;
@@ -598,13 +677,102 @@ body {
 }
 
 .video-placeholder strong {
+  position: relative;
   font-size: clamp(32px, 5vw, 62px);
   letter-spacing: -0.055em;
 }
 
+.video-placeholder strong span {
+  display: block;
+}
+
+.video-placeholder strong,
+.video-placeholder strong span {
+  width: 100%;
+  text-align: center;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.video-placeholder strong span {
+  height: auto;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
 .video-placeholder p {
+  position: relative;
   max-width: 520px;
   color: var(--muted);
+}
+
+.course-video-top {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  right: 22px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.course-video-top > span {
+  position: static;
+  width: auto !important;
+  height: auto !important;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 !important;
+  border: 0;
+  border-radius: 0;
+}
+
+.course-badge {
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 7px 10px;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+}
+
+.play-circle {
+  position: relative;
+  z-index: 1;
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 22px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.video-timeline {
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 28px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.video-timeline i {
+  display: block;
+  width: 18%;
+  height: 100%;
+  background: #30d158;
 }
 
 .lesson-panel {
@@ -630,15 +798,215 @@ body {
 }
 
 .lesson-panel li {
-  padding: 12px 14px;
   border: 1px solid var(--line-soft);
   border-radius: 10px;
   color: var(--muted);
+  overflow: hidden;
 }
 
 .lesson-panel li.is-active {
   color: var(--text);
   background: rgba(255, 255, 255, 0.08);
+}
+
+.lesson-list button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 13px 14px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lesson-list button span {
+  color: var(--faint);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.course-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.course-stats div {
+  padding: 14px;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.course-stats strong,
+.course-stats span {
+  display: block;
+}
+
+.course-stats strong {
+  font-size: 20px;
+}
+
+.course-stats span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.lesson-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.course-support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.course-support-grid article,
+.course-notebook {
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  background: rgba(18, 18, 18, 0.78);
+}
+
+.course-support-grid article {
+  min-height: 190px;
+  padding: 24px;
+}
+
+.course-support-grid span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.course-support-grid h2 {
+  margin: 42px 0 12px;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.course-support-grid p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.course-notebook {
+  display: grid;
+  grid-template-columns: 0.72fr 1fr;
+  gap: 32px;
+  margin-top: 18px;
+  padding: 28px;
+}
+
+.course-notebook h2 {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.course-notebook p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.course-video-focus {
+  width: min(1180px, calc(100% - 48px));
+  padding-top: 34px;
+}
+
+.course-video-focus .course-player {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.course-video-focus .video-stage {
+  width: 100%;
+  min-height: clamp(560px, 64vh, 760px);
+}
+
+.course-video-focus .video-placeholder {
+  min-height: clamp(560px, 64vh, 760px);
+  border-radius: 16px;
+}
+
+.course-video-focus .video-placeholder strong {
+  max-width: 900px;
+  font-size: clamp(44px, 6vw, 86px);
+  line-height: 1.02;
+}
+
+.course-video-focus .video-placeholder p {
+  max-width: 680px;
+  font-size: 18px;
+}
+
+.course-progress-panel {
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  background: rgba(18, 18, 18, 0.78);
+  overflow: hidden;
+}
+
+.course-progress-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.course-progress-head strong {
+  color: var(--text);
+}
+
+.course-progress-list {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(140px, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  list-style: none;
+}
+
+.course-progress-list li {
+  min-width: 140px;
+  border: 0;
+  border-right: 1px solid var(--line-soft);
+  border-radius: 0;
+  background: transparent;
+}
+
+.course-progress-list li:last-child {
+  border-right: 0;
+}
+
+.course-progress-list li.is-active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.course-progress-list button {
+  min-height: 76px;
+  align-content: center;
 }
 
 .search-modal {
@@ -1004,6 +1372,10 @@ body[data-theme="light"] .theme-icon-sun {
   letter-spacing: -0.075em;
   color: #fff;
   text-shadow: 0 1px 32px rgba(0, 0, 0, 0.62);
+}
+
+.hero h1 span {
+  display: inline;
 }
 
 .hero p {
@@ -1934,6 +2306,32 @@ code {
   line-height: 1.55;
 }
 
+.prototype-note {
+  max-width: 680px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  margin-top: 24px;
+  padding: 16px 18px;
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.prototype-note strong {
+  color: var(--text);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.prototype-note span {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .resource-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2150,7 +2548,9 @@ body[data-theme="light"] .announcement:hover {
   .resource-grid,
   .experience-stack,
   .pillar-system,
-  .roadmap-section {
+  .roadmap-section,
+  .course-support-grid,
+  .course-notebook {
     grid-template-columns: 1fr;
   }
 
@@ -2223,6 +2623,14 @@ body[data-theme="light"] .announcement:hover {
   .requests-head {
     display: grid;
     align-items: start;
+  }
+
+  .internship-form {
+    grid-template-columns: 1fr;
+  }
+
+  .prototype-note {
+    grid-template-columns: 1fr;
   }
 
   .requests-table th,
@@ -2908,4 +3316,512 @@ body[data-theme="light"] .announcement:hover {
 
 .orbit-stage.map-globe-stage {
   margin-bottom: 0;
+}
+
+/* Mobile review pass */
+@media (max-width: 768px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container,
+  .page-shell,
+  .site-footer,
+  .satellite-hero,
+  .course-video-focus {
+    width: min(100% - 32px, var(--max));
+  }
+
+  .topbar {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "brand"
+      "nav"
+      "actions";
+    gap: 12px;
+    height: auto;
+    padding: 16px;
+  }
+
+  .brand {
+    grid-area: brand;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .brand-copy {
+    min-width: 0;
+  }
+
+  .brand-copy strong,
+  .brand-copy small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .brand-copy small {
+    display: none;
+  }
+
+  .main-nav {
+    grid-area: nav;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 2px 0 6px;
+    scrollbar-width: none;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-nav a {
+    flex: 0 0 auto;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .nav-actions {
+    grid-area: actions;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .search-pill,
+  .dashboard-btn,
+  .light-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero.hero-product {
+    min-height: auto;
+    width: min(100% - 32px, var(--max));
+    padding: 78px 0 58px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 17vw, 86px);
+    line-height: 0.94;
+  }
+
+  .hero h1,
+  .experience-copy h2,
+  .section-center h2,
+  .roadmap-copy h2,
+  .page-hero h1,
+  .internship-apply-head h1,
+  .satellite-copy h1,
+  .docs-hero h1,
+  .course-video-focus .video-placeholder strong,
+  .video-placeholder strong {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .hero p,
+  .experience-copy p,
+  .section-center p,
+  .page-hero p,
+  .internship-apply-head p,
+  .satellite-copy p,
+  .docs-hero p,
+  .video-placeholder p {
+    max-width: 100%;
+    width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .experience-stack {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 56px 0;
+  }
+
+  .experience-copy h2,
+  .section-center h2,
+  .roadmap-copy h2,
+  .page-hero h1,
+  .internship-apply-head h1 {
+    font-size: clamp(34px, 11vw, 54px);
+    line-height: 0.98;
+  }
+
+  .display-card-stack {
+    min-height: 320px;
+  }
+
+  .display-card {
+    width: min(19rem, 84vw);
+  }
+
+  .architecture-section {
+    padding: 62px 0 32px;
+  }
+
+  .architecture-flow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .architecture-flow article {
+    min-height: 190px;
+    padding: 22px 18px;
+  }
+
+  .architecture-flow article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .architecture-flow h3 {
+    margin-top: 44px;
+    font-size: 24px;
+  }
+
+  .roadmap-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .docs-layout {
+    width: min(100% - 32px, var(--max));
+    grid-template-columns: 1fr;
+  }
+
+  .docs-sidebar,
+  .toc {
+    position: static;
+  }
+
+  .doc-card-grid,
+  .resource-grid,
+  .page-course-grid,
+  .course-support-grid,
+  .course-notebook {
+    grid-template-columns: 1fr;
+  }
+
+  .course-player {
+    grid-template-columns: 1fr;
+  }
+
+  .course-video-focus .video-stage,
+  .course-video-focus .video-placeholder,
+  .video-stage,
+  .video-placeholder {
+    min-height: min(66vh, 560px);
+  }
+
+  .course-video-focus .video-placeholder strong,
+  .video-placeholder strong {
+    width: 100%;
+    font-size: clamp(30px, 8vw, 44px);
+  }
+
+  .course-video-top {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .video-timeline {
+    left: 20px;
+    right: 20px;
+  }
+
+  .course-progress-list {
+    grid-template-columns: repeat(7, minmax(152px, 1fr));
+  }
+
+  .internship-apply {
+    width: 100%;
+  }
+
+  .internship-apply-head {
+    text-align: left;
+  }
+
+  .internship-form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .internship-requests {
+    margin-top: 18px;
+  }
+
+  .requests-table {
+    min-width: 820px;
+  }
+
+  .satellite-page,
+  .satellite-hero {
+    width: min(100% - 32px, var(--max));
+  }
+
+  .satellite-copy {
+    text-align: left;
+  }
+
+  .satellite-copy h1 {
+    font-size: clamp(40px, 13vw, 68px);
+  }
+
+  .satellite-copy p {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 16px;
+  }
+
+  .orbit-stage.map-globe-stage {
+    width: 100%;
+    min-height: 620px;
+    overflow: hidden;
+  }
+
+  .satellite-info {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 22px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .container,
+  .page-shell,
+  .site-footer,
+  .satellite-hero,
+  .course-video-focus {
+    width: min(100% - 24px, var(--max));
+  }
+
+  .topbar {
+    padding: 14px 12px;
+  }
+
+  .brand-mark img,
+  .footer-brand-mark img {
+    height: 18px;
+  }
+
+  .brand-copy strong {
+    font-size: 18px;
+  }
+
+  .hero.hero-product {
+    width: min(100% - 24px, var(--max));
+    padding-top: 58px;
+    padding-bottom: 42px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 15vw, 64px);
+  }
+
+  .hero h1 span {
+    display: block;
+  }
+
+  .hero-title-shell {
+    display: block;
+    width: 100%;
+  }
+
+  .experience-stack,
+  .architecture-section,
+  .roadmap-section,
+  .page-shell {
+    padding-top: 46px;
+    padding-bottom: 58px;
+  }
+
+  .display-card-stack {
+    min-height: 280px;
+  }
+
+  .display-card {
+    width: min(17rem, 82vw);
+    padding: 18px;
+  }
+
+  .display-card-two {
+    transform: skewY(-8deg) translateX(28px) translateY(34px);
+  }
+
+  .display-card-three {
+    transform: skewY(-8deg) translateX(56px) translateY(68px);
+  }
+
+  .architecture-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-flow article,
+  .architecture-flow article:nth-child(2) {
+    border-right: 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .architecture-flow article:last-child {
+    border-bottom: 0;
+  }
+
+  .roadmap-task-row {
+    grid-template-columns: 18px minmax(0, 1fr);
+  }
+
+  .roadmap-badge {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .docs-layout {
+    width: min(100% - 24px, var(--max));
+  }
+
+  .docs-hero h1,
+  .page-hero h1,
+  .internship-apply-head h1 {
+    font-size: clamp(32px, 10vw, 42px);
+  }
+
+  .experience-copy h2,
+  .section-center h2,
+  .roadmap-copy h2 {
+    font-size: clamp(32px, 10vw, 42px);
+  }
+
+  .course-video-focus {
+    padding-top: 24px;
+  }
+
+  .course-video-focus .video-stage,
+  .course-video-focus .video-placeholder,
+  .video-stage,
+  .video-placeholder {
+    min-height: 430px;
+  }
+
+  .video-placeholder {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .course-video-top {
+    display: grid;
+    justify-content: start;
+    gap: 8px;
+  }
+
+  .play-circle {
+    width: 62px;
+    height: 62px;
+  }
+
+  .course-video-focus .video-placeholder strong,
+  .video-placeholder strong {
+    display: block;
+    max-width: 100%;
+    font-size: clamp(22px, 6.5vw, 26px);
+    line-height: 1.12;
+  }
+
+  .video-placeholder p {
+    font-size: 15px;
+  }
+
+  .course-progress-head,
+  .requests-head {
+    display: grid;
+    align-items: start;
+  }
+
+  .internship-form input,
+  .internship-form select,
+  .internship-form textarea,
+  .search-input {
+    font-size: 16px;
+  }
+
+  .requests-table {
+    min-width: 760px;
+  }
+
+  .satellite-hero {
+    width: min(100% - 24px, var(--max));
+    padding-top: 34px;
+  }
+
+  .orbit-stage.map-globe-stage {
+    min-height: 540px;
+  }
+
+  .satellite-map-label {
+    display: none;
+  }
+
+  .satellite-info dl div {
+    display: grid;
+    gap: 4px;
+  }
+
+  .satellite-info dd {
+    text-align: left;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .site-footer {
+    margin-top: 54px;
+    padding: 42px 0 34px;
+  }
+
+  .video-placeholder strong,
+  .video-placeholder strong span {
+    width: 100%;
+    text-align: center;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .video-placeholder strong span {
+    height: auto;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+  }
 }
