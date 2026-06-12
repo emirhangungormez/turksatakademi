@@ -1,0 +1,7 @@
+# Türksat Akademi Konsept Demo
+
+Bu site, Türksat Akademi fikrini sunmak için hazırlanmış tek gösterimlik bir konsept demodur.
+Resmi Türksat ürünü değildir.
+
+Arama motorları ve yapay zeka tarayıcıları için indeksleme amaçlanmamaktadır.
+

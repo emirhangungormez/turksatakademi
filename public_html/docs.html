@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dokümanlar | Türksat Akademi Geliştirici Merkezi</title>
-  <meta name="description" content="Türksat Akademi konsept demosu için geliştirici dokümanları, sistem modülleri ve içerik mimarisi sayfası.">
+  <title>Dokümanlar | Türksat Akademi</title>
+  <meta name="description" content="Türksat Akademi konsept demosu için blog yazıları, tez özetleri, teknik notlar ve kurumsal doküman merkezi.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#050505">
   <link rel="icon" type="image/png" href="img/brand/turksat-favicon.png">
@@ -13,130 +13,121 @@
 <body>
   <header class="topbar">
     <a class="brand" href="index.html" aria-label="Türksat Akademi ana sayfa">
-      <span class="brand-mark">
-        <img src="img/brand/turksat-logo.png" alt="Türksat logosu">
-      </span>
-      <span class="brand-copy">
-        <strong>Akademi</strong>
-        <small>Geliştirici Merkezi</small>
-      </span>
+      <span class="brand-mark"><img src="img/brand/turksat-logo.png" alt="Türksat logosu"></span>
+      <span class="brand-copy"><strong>Akademi</strong><small>Geliştirici Merkezi</small></span>
     </a>
     <nav class="main-nav" aria-label="Ana gezinme">
       <a href="index.html">Ana Sayfa</a>
       <a class="is-active" href="docs.html">Dokümanlar</a>
       <a href="egitim.html">Eğitimler</a>
+      <a href="staj.html">Staj Paneli</a>
       <a href="uydu.html">Uydu Merkezi</a>
       <a href="yayinlar.html">Yayınlar</a>
     </nav>
     <div class="nav-actions">
-      <a class="search-pill" href="#akademi">Dokümanlarda ara <span>⌕</span></a>
-      <button class="theme-toggle" type="button" aria-label="Tema değiştir">
-        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20.2 14.1A8.7 8.7 0 0 1 9.9 3.8a9 9 0 1 0 10.3 10.3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 4V2.5M12 21.5V20M4 12H2.5M21.5 12H20M6.3 6.3 5.2 5.2M18.8 18.8l-1.1-1.1M17.7 6.3l1.1-1.1M5.2 18.8l1.1-1.1M12 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-        </svg>
-      </button>
+      <a class="search-pill" href="#arama">Dokümanlarda ara <span>⌕</span></a>
       <a class="dashboard-btn" href="index.html">Ana merkeze dön</a>
     </div>
   </header>
 
   <main class="docs-layout">
     <aside class="docs-sidebar">
-      <span class="sidebar-title">İçerik alanları</span>
+      <span class="sidebar-title">Doküman alanları</span>
       <nav>
-        <a href="#akademi">Akademi sistemi</a>
-        <a href="#moduller">Modüller</a>
+        <a href="#blog">Blog yazıları</a>
+        <a href="#tezler">Tez özetleri</a>
+        <a href="#teknik-notlar">Teknik notlar</a>
         <a href="#standartlar">Standartlar</a>
-        <a href="#guvenlik">Güvenlik notları</a>
       </nav>
     </aside>
 
     <div class="docs-content">
       <section class="docs-hero">
-        <p class="eyebrow">Dokümanlar / Mimari / Genel bakış</p>
-        <h1>Türksat Akademi doküman sistemi</h1>
-        <p>Bu alan; eğitim katalogları, teknik yayın şablonları, kurumsal rehberler ve uydu bilgi içeriklerinin tek bir geliştirici yüzeyinde nasıl birleşeceğini anlatır.</p>
+        <p class="eyebrow">Dokümanlar / Aranabilir bilgi merkezi</p>
+        <h1>Doküman Merkezi</h1>
+        <p>Bu sayfa, Türksat Akademi içinde eğitimleri destekleyen okuma materyallerini ve kurum içi bilgi üretimini göstermek için hazırlanmış statik bir demo merkezidir.</p>
+        <button class="dashboard-btn search-launch" type="button">Dokümanlarda ara</button>
       </section>
 
-      <section class="docs-section" id="akademi">
-        <h2>Akademi sistemi</h2>
-        <p>Temel kurgu, yalnızca kurs listeleyen bir yapı kurmak yerine; eğitim, yayın, referans bilgi ve operasyonel dokümanları ortak bir bilgi mimarisinde sunmaktır.</p>
-        <div class="doc-card-grid">
-          <article class="doc-card">
-            <strong>Öğrenme yolları</strong>
-            <span>Rol, seviye ve birim bazlı kurgulanmış eğitim akışları.</span>
+      <section class="docs-section" id="blog">
+        <h2>Blog yazıları</h2>
+        <div class="article-list">
+          <article>
+            <span>Akademi Blogu · 6 dk</span>
+            <h3>Akademi neden katalog değildir?</h3>
+            <p>Sertifika, doküman, yayın ve kariyer başvurularının aynı platformda birleştiği akademi yaklaşımı.</p>
           </article>
-          <article class="doc-card">
-            <strong>Kurumsal yayınlar</strong>
-            <span>Blog, teknik makale, haber ve bilgi notları için tek formatlı yayın sistemi.</span>
+          <article>
+            <span>Uydu Gündemi · 8 dk</span>
+            <h3>Uydu haberleşmesine giriş</h3>
+            <p>Uydu terminolojisini yeni başlayanlar için sadeleştiren temel okuma dokümanı.</p>
           </article>
-          <article class="doc-card">
-            <strong>Uydu bilgi merkezi</strong>
-            <span>Uydu filosu, kapsama, terminoloji ve stratejik kullanım bilgileri.</span>
+          <article>
+            <span>Kariyer · 5 dk</span>
+            <h3>Teknik profil nasıl hazırlanır?</h3>
+            <p>Gençlerin yetkinliklerini, ilgi alanlarını ve proje deneyimlerini doğru sunması için rehber.</p>
           </article>
         </div>
       </section>
 
-      <section class="docs-section" id="moduller">
-        <h2>Modüller</h2>
-        <p>Her modül hem bağımsız çalışabilir hem de ortak navigasyon ve arama altyapısı ile birleşik deneyim verir.</p>
+      <section class="docs-section" id="tezler">
+        <h2>Tez ve araştırma özetleri</h2>
+        <div class="article-list">
+          <article>
+            <span>Tez Özeti · Haberleşme</span>
+            <h3>LEO ve GEO mimarileri</h3>
+            <p>Uydu mimarilerinin eğitim içeriğine dönüştürülmesi için örnek araştırma özeti.</p>
+          </article>
+          <article>
+            <span>Araştırma Notu · Güvenlik</span>
+            <h3>Siber farkındalık ölçümü</h3>
+            <p>Eğitim tamamlanma oranı, quiz başarısı ve davranışsal farkındalık metrikleri.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="docs-section" id="teknik-notlar">
+        <h2>Teknik notlar</h2>
         <div class="table-list">
           <div>
-            <span>Eğitim kataloğu</span>
-            <em>Video, metin, değerlendirme ve sertifika adımlarını tek yol üstünde toplar.</em>
+            <span>Network 101 ders notu</span>
+            <em>OSI katmanları, IP adresleme ve DNS için kısa referans sayfası.</em>
           </div>
           <div>
-            <span>Doküman merkezi</span>
-            <em>Teknik rehberler, kurumsal standartlar ve sunum materyalleri için referans alanı sağlar.</em>
+            <span>Siber Güvenlik 101 kontrol listesi</span>
+            <em>Parola, MFA, e-posta güvenliği ve olay bildirimi için hızlı kontrol listesi.</em>
           </div>
           <div>
-            <span>Yayın merkezi</span>
-            <em>Akademi blogu, teknik makaleler ve uydu gündemi içerikleri için editoryal altyapı sunar.</em>
-          </div>
-          <div>
-            <span>Uydu sayfaları</span>
-            <em>Uydu kartları, kapsama özetleri ve stratejik kullanım bağlamını görünür hale getirir.</em>
+            <span>Uydu Haberleşmesi sözlüğü</span>
+            <em>Yörünge, transponder, kapsama, uplink ve downlink terimleri.</em>
           </div>
         </div>
       </section>
 
       <section class="docs-section" id="standartlar">
-        <h2>Yayın ve doküman standardı</h2>
-        <p>Başlık yapısı, etiketleme, belge sürümü, güncelleme tarihi ve sorumlu ekip alanları ortak tutulur. Böylece tüm içerikler aynı kalite çerçevesinde yaşar.</p>
-        <pre><code>Belge başlığı
-Sürüm numarası
-Son güncelleme tarihi
-Sorumlu ekip
-İçerik türü
-İlişkili eğitim veya uydu başlığı</code></pre>
-      </section>
-
-      <section class="docs-section" id="guvenlik">
-        <h2>Güvenlik ve erişim notları</h2>
-        <p>Bu demo halka açık indeksleme için değil, yönetim değerlendirmesi için kurgulandı. Bu nedenle tüm sayfalarda noindex politikası korunur.</p>
-        <div class="callout">
-          Demo ortamı; bilgi mimarisi, içerik kurgusu ve arayüz yaklaşımını göstermek için hazırlanmıştır. Resmi ürün yayını değildir.
-        </div>
+        <h2>Doküman standardı</h2>
+        <p>Tüm içerikler tür, seviye, hedef kitle, güncelleme tarihi, ilişkili eğitim ve sorumlu ekip alanlarıyla etiketlenir. Bu sayede doküman araması, eğitim sayfaları ve yayın merkezi aynı bilgi mimarisini kullanır.</p>
+        <pre><code>İçerik türü: Blog / Tez / Teknik Not / Rehber
+Hedef kitle: Öğrenci / Stajyer / Uzman / Yönetici
+İlişkili eğitim: Network 101
+Sürüm: 1.0
+Son güncelleme: 2026</code></pre>
       </section>
     </div>
 
     <aside class="toc">
       <span>Bu sayfada</span>
-      <a href="#akademi">Akademi sistemi</a>
-      <a href="#moduller">Modüller</a>
+      <a href="#blog">Blog yazıları</a>
+      <a href="#tezler">Tez özetleri</a>
+      <a href="#teknik-notlar">Teknik notlar</a>
       <a href="#standartlar">Standartlar</a>
-      <a href="#guvenlik">Güvenlik ve erişim</a>
     </aside>
   </main>
 
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <span class="footer-brand-mark">
-          <img src="img/brand/turksat-logo.png" alt="Türksat logosu">
-        </span>
+        <span class="footer-brand-mark"><img src="img/brand/turksat-logo.png" alt="Türksat logosu"></span>
         <strong>Türksat Akademi</strong>
         <p>Konsept demo. Resmi Türksat ürünü değildir. Yönetim sunumu ve bilgi mimarisi değerlendirmesi amacıyla hazırlanmıştır.</p>
       </div>
@@ -144,18 +135,14 @@ Sorumlu ekip
         <strong>Platform</strong>
         <a href="docs.html">Dokümanlar</a>
         <a href="egitim.html">Eğitimler</a>
+        <a href="staj.html">Staj Paneli</a>
         <a href="uydu.html">Uydu Merkezi</a>
       </nav>
       <nav class="footer-col" aria-label="İçerik">
         <strong>İçerik</strong>
         <a href="yayinlar.html">Yayınlar</a>
-        <a href="docs.html#standartlar">Standartlar</a>
-        <a href="docs.html#guvenlik">Güvenlik notları</a>
-      </nav>
-      <nav class="footer-col" aria-label="Site">
-        <strong>Site</strong>
-        <a href="index.html">Ana Sayfa</a>
-        <a href="dokumanlar.html">Eski doküman rotası</a>
+        <a href="docs.html#blog">Blog yazıları</a>
+        <a href="docs.html#tezler">Tez özetleri</a>
       </nav>
       <nav class="footer-col" aria-label="Bilgi">
         <strong>Bilgi</strong>

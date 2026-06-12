@@ -3,92 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Uydu Merkezi | Türksat Akademi Geliştirici Merkezi</title>
-  <meta name="description" content="Türksat Akademi konsept demosu için uydu filosu, kapsama bilgileri ve stratejik uydu içerikleri.">
+  <title>Uydu Merkezi | Türksat Akademi</title>
+  <meta name="description" content="Türksat Akademi konsept demosu için uydu filosu, yörünge bilgileri ve interaktif uydu merkezi.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#050505">
   <link rel="icon" type="image/png" href="img/brand/turksat-favicon.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="style.css?v=globe-map-6">
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="index.html" aria-label="Türksat Akademi ana sayfa">
-      <span class="brand-mark">
-        <img src="img/brand/turksat-logo.png" alt="Türksat logosu">
-      </span>
-      <span class="brand-copy">
-        <strong>Akademi</strong>
-        <small>Geliştirici Merkezi</small>
-      </span>
+      <span class="brand-mark"><img src="img/brand/turksat-logo.png" alt="Türksat logosu"></span>
+      <span class="brand-copy"><strong>Akademi</strong><small>Geliştirici Merkezi</small></span>
     </a>
     <nav class="main-nav" aria-label="Ana gezinme">
       <a href="index.html">Ana Sayfa</a>
       <a href="docs.html">Dokümanlar</a>
       <a href="egitim.html">Eğitimler</a>
+      <a href="staj.html">Staj Paneli</a>
       <a class="is-active" href="uydu.html">Uydu Merkezi</a>
       <a href="yayinlar.html">Yayınlar</a>
     </nav>
     <div class="nav-actions">
-      <a class="search-pill" href="#filo">Uydu başlığı ara <span>⌕</span></a>
-      <button class="theme-toggle" type="button" aria-label="Tema değiştir">
-        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20.2 14.1A8.7 8.7 0 0 1 9.9 3.8a9 9 0 1 0 10.3 10.3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 4V2.5M12 21.5V20M4 12H2.5M21.5 12H20M6.3 6.3 5.2 5.2M18.8 18.8l-1.1-1.1M17.7 6.3l1.1-1.1M5.2 18.8l1.1-1.1M12 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-        </svg>
-      </button>
+      <a class="search-pill" href="docs.html">Dokümanlarda ara <span>⌕</span></a>
       <a class="dashboard-btn" href="docs.html">Doküman Merkezi</a>
     </div>
   </header>
 
-  <main class="page-shell">
-    <section class="page-hero">
-      <p class="eyebrow">Uydu Merkezi / Genel bakış</p>
-      <h1>Uydu bilgisi için merkezi yüzey</h1>
-      <p>Uydu başlıkları yalnızca teknik veri listesi olarak değil; kapsama, stratejik değer ve eğitimle ilişkili içeriklerle birlikte sunulur.</p>
-    </section>
+  <main class="satellite-page">
+    <section class="satellite-hero">
+      <div class="satellite-copy">
+        <p class="eyebrow">Uydu Merkezi / İnteraktif filo</p>
+        <h1>Uydu Merkezi</h1>
+        <p>Türksat Akademi içinde uydu filosu, yörünge bilgisi ve stratejik kapsama anlatısı tek bir görsel merkezde incelenebilir.</p>
+        <div class="satellite-help">Yeşil noktalar uyduları, kırmızı noktalar Türkiye'deki yer sistemlerini gösterir.</div>
+      </div>
 
-    <section class="resource-grid" id="filo">
-      <article class="resource-card">
-        <h2>Türksat 6A</h2>
-        <p>Türkiye odaklı yeni nesil yetkinlik anlatısı, savunma ve kamu ekosistemi bağlamı ile birlikte sunulur.</p>
-      </article>
-      <article class="resource-card">
-        <h2>Türksat 5B</h2>
-        <p>Yüksek kapasiteli Ka-bant servisleri için eğitim ve teknik referans içeriğine bağlanan merkez sayfa.</p>
-      </article>
-      <article class="resource-card">
-        <h2>Türksat 4A ve 4B</h2>
-        <p>Mevcut operasyonel kapsama, kullanım örnekleri ve tarihsel bağlam için referans içerik alanı.</p>
-      </article>
-    </section>
-
-    <section class="docs-section">
-      <h2>Sunum önerisi</h2>
-      <div class="table-list">
-        <div>
-          <span>Yörünge konumu</span>
-          <em>31° Doğu ve 42° Doğu gibi konumları sade bilgi kartları ile görünür hale getirir.</em>
-        </div>
-        <div>
-          <span>Kapsama özetleri</span>
-          <em>Bölgesel etki alanları, hizmet senaryoları ve öne çıkan kullanım alanları aynı yerde anlatılır.</em>
-        </div>
-        <div>
-          <span>İlgili eğitimler</span>
-          <em>Her uydu sayfası, ilişkili eğitim ve rehber dokümanlar ile çapraz bağlanır.</em>
+      <div class="orbit-stage map-globe-stage" aria-label="Türksat uydu yörünge görselleştirmesi">
+        <div class="satellite-map" id="satelliteMap"></div>
+        <div class="map-loader" id="satelliteMapLoader" aria-hidden="true">
+          <span></span><span></span><span></span>
         </div>
       </div>
+
+      <aside class="satellite-info" id="satelliteInfo" aria-live="polite">
+        <span>Seçili uydu</span>
+        <h2>Türksat 6A</h2>
+        <p>Türkiye'nin yerli haberleşme uydusu. Akademi tarafında teknoloji yetkinliği, stratejik bağımsızlık ve uydu haberleşmesi anlatısının merkezinde konumlanır.</p>
+        <dl>
+          <div><dt>Yörünge</dt><dd>42° Doğu</dd></div>
+          <div><dt>Odak</dt><dd>Yerli uydu kabiliyeti</dd></div>
+          <div><dt>Akademi bağı</dt><dd>Uydu Haberleşmesi 101</dd></div>
+        </dl>
+      </aside>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <span class="footer-brand-mark">
-          <img src="img/brand/turksat-logo.png" alt="Türksat logosu">
-        </span>
+        <span class="footer-brand-mark"><img src="img/brand/turksat-logo.png" alt="Türksat logosu"></span>
         <strong>Türksat Akademi</strong>
         <p>Konsept demo. Resmi Türksat ürünü değildir. Yönetim sunumu ve bilgi mimarisi değerlendirmesi amacıyla hazırlanmıştır.</p>
       </div>
@@ -96,18 +71,14 @@
         <strong>Platform</strong>
         <a href="docs.html">Dokümanlar</a>
         <a href="egitim.html">Eğitimler</a>
+        <a href="staj.html">Staj Paneli</a>
         <a href="uydu.html">Uydu Merkezi</a>
       </nav>
       <nav class="footer-col" aria-label="İçerik">
         <strong>İçerik</strong>
         <a href="yayinlar.html">Yayınlar</a>
-        <a href="docs.html#standartlar">Standartlar</a>
-        <a href="docs.html#guvenlik">Güvenlik notları</a>
-      </nav>
-      <nav class="footer-col" aria-label="Site">
-        <strong>Site</strong>
-        <a href="index.html">Ana Sayfa</a>
-        <a href="dokumanlar.html">Eski doküman rotası</a>
+        <a href="docs.html#blog">Blog yazıları</a>
+        <a href="docs.html#tezler">Tez özetleri</a>
       </nav>
       <nav class="footer-col" aria-label="Bilgi">
         <strong>Bilgi</strong>
@@ -117,6 +88,7 @@
     </div>
     <div class="footer-bottom">© 2026 Türksat Akademi konsept demosu.</div>
   </footer>
-  <script src="script.js"></script>
+  <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+  <script src="script.js?v=globe-map-6"></script>
 </body>
 </html>
